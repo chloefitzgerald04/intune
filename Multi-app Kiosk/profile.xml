@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AssignedAccessConfiguration  
+  xmlns="http://schemas.microsoft.com/AssignedAccess/2017/config" xmlns:win11="http://schemas.microsoft.com/AssignedAccess/2022/config">
+  <Profiles>
+    <Profile Id="{027170BF-8C08-4FC0-B068-E914A4CC28D0}">       
+      <AllAppsList>
+        <AllowedApps> 
+          <App DesktopAppPath="%windir%\explorer.exe" />
+          <App AppUserModelId="Microsoft.Office.POWERPNT.EXE.15" rs5:AutoLaunch="true"/>
+          <App AppUserModelId="Microsoft.Office.EXCEL.EXE.15" />
+          <App AppUserModelId="Microsoft.Office.WINWORD.EXE.15" />
+          <App AppUserModelId="Microsoft.WindowsTerminal_8wekyb3d8bbwe!App" />
+          <App AppUserModelId="Microsoft.Windows.Shell.RunDialog" />
+          <App AppUserModelId="windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel" />
+          <App AppUserModelId="Microsoft.Windows.ShellExperienceHost" />
+          <App DesktopAppPath="C:\Windows\system32\cmd.exe" />
+          <App DesktopAppPath="%windir%\System32\control.exe" />
+          <App DesktopAppPath="%windir%\System32\*.cpl" />
+          <App DesktopAppPath="%windir%\System32\WindowsPowerShell\v1.0\Powershell.exe" />
+          <App DesktopAppPath="%ProgramFiles(x86)%\NinjaOne\*" /> 
+          <App DesktopAppPath="%ProgramFiles%\njbar\*" /> 
+          <App DesktopAppPath="C:\ProgramData\NinjaRMMAgent" />
+        </AllowedApps> 
+      </AllAppsList> 
+
+
+      <rs5:FileExplorerNamespaceRestrictions>
+        <rs5:AllowedNamespace Name="Downloads"/>
+        <v3:AllowRemovableDrives />
+      </rs5:FileExplorerNamespaceRestrictions>
+
+
+      <win11:StartPins>
+        <![CDATA[  
+          { "pinnedList":[
+            {"packagedAppId":"Microsoft.WindowsTerminal_8wekyb3d8bbwe!App"},
+            {"desktopAppLink":"%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\File Explorer.lnk"},
+            {"packagedAppId": "windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel"},
+            {"desktopAppLink":"%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\PowerPoint.lnk"},
+            {"desktopAppLink":"%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Word.lnk"},
+            {"desktopAppLink":"%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Excel.lnk"}
+          ] }
+        ]]>
+      </win11:StartPins>
+
+      <Taskbar ShowTaskbar="true"/>
+      <v5:TaskbarLayout>
+        <![CDATA[
+        <?xml version="1.0" encoding="utf-8"?>
+        <LayoutModificationTemplate
+            xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification"
+            xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout"
+            xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout"
+            xmlns:taskbar="http://schemas.microsoft.com/Start/2014/TaskbarLayout"
+            Version="1">
+          <CustomTaskbarLayoutCollection>
+            <defaultlayout:TaskbarLayout>
+              <taskbar:TaskbarPinList>
+                <taskbar:DesktopApp DesktopApplicationID="Microsoft.Windows.Explorer" />
+                <taskbar:DesktopApp DesktopApplicationID="windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel" />
+                <taskbar:DesktopApp DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\PowerPoint.lnk"/>
+                <taskbar:DesktopApp DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Word.lnk"/>
+                <taskbar:DesktopApp DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Excel.lnk"/>
+              </taskbar:TaskbarPinList>
+            </defaultlayout:TaskbarLayout>
+          </CustomTaskbarLayoutCollection>
+        </LayoutModificationTemplate>
+        ]]>
+      </v5:TaskbarLayout>
+    </Profile> 
+  </Profiles>
+  <Configs>
+    <Config>
+      <Account>AzureAD\{upn}</Account>
+      <DefaultProfile Id="{027170BF-8C08-4FC0-B068-E914A4CC28D0}"/>
+    </Config>
+  </Configs>
+</AssignedAccessConfiguration>
